@@ -77,9 +77,9 @@ header {
           width: 55px;
           height: 50px;
           border-radius: 3px;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          display: inline-block;
+		  text-align: center;
+		  line-height: 50px;
           font-size: 20px;
 
           i {
@@ -88,19 +88,17 @@ header {
         }
 
         .cart-counter {
-          width: 28px;
+		  z-index: 2;
+		  margin-left: -15px;
+		  margin-right: -10px;
+		  padding: 0 10px;
           height: 27px;
-          border-radius: 14px;
+          border-radius: 18px;
           background-color: $header-bg;
-          display: flex;
-          align-items: center;
-          justify-content: center;
+          display: inline-block;
+		  line-height: 27px;
           font-size: 14px;
           color: rgb(224,227,237);
-          position: absolute;
-          top: 50%;
-          right: 0;
-          transform: translate(50%, -50%);
         }
 
         &:hover {
