@@ -10548,6 +10548,11 @@ footer .bottom-bar {
     display: flex;
     justify-content: space-between;
     align-items: center; }
+    .product-box .actions a[active] {
+      background-color: #d58e32;
+      border-color: #d58e32; }
+      .product-box .actions a[active] i {
+        color: #ffffff; }
 
 .section--features {
   padding: 5rem 0; }
