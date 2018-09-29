@@ -77,8 +77,8 @@ header {
           height: 50px;
           border-radius: 3px;
           display: inline-block;
-  	      text-align: center;
-  	      line-height: 50px;
+          text-align: center;
+          line-height: 50px;
           font-size: 20px;
 
           i {
@@ -87,14 +87,14 @@ header {
         }
 
         .cart-counter {
-  		    z-index: 2;
-    		  margin-left: -15px;
-    		  padding: 0 10px;
+          z-index: 2;
+          margin-left: -15px;
+          padding: 0 10px;
           height: 27px;
           border-radius: 18px;
           background-color: $header-bg;
           display: inline-block;
-  		    line-height: 27px;
+          line-height: 27px;
           font-size: 14px;
           color: rgb(224,227,237);
         }
