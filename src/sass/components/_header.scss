@@ -106,6 +106,31 @@ header {
         }
       }
     }
+
+    @include media-breakpoint-down(sm) {
+      .container > .row{
+        flex-direction: column;
+        position: relative;
+        .phone-number {
+          order: 3;
+          font-size: 14px;
+          text-align: right !important;
+        }
+        .logo {
+          order: 1;
+            position: absolute;
+            top: 50%;
+            transform: translate(0%, -65%);
+            text-align: left !important;
+        }
+        .cart {
+          order: 2;
+          display: flex;
+          align-items: flex-end;
+          justify-content: flex-end;
+        }
+      }
+    }
   }
 
   .menu-bar {
