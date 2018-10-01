@@ -3996,7 +3996,7 @@ button.close {
   .bs-popover-top .arrow::before, .bs-popover-auto[x-placement^="top"] .arrow::before {
     bottom: 0;
     border-top-color: rgba(0, 0, 0, 0.25); }
-
+  
   .bs-popover-top .arrow::after,
   .bs-popover-auto[x-placement^="top"] .arrow::after {
     bottom: 1px;
@@ -4016,7 +4016,7 @@ button.close {
   .bs-popover-right .arrow::before, .bs-popover-auto[x-placement^="right"] .arrow::before {
     left: 0;
     border-right-color: rgba(0, 0, 0, 0.25); }
-
+  
   .bs-popover-right .arrow::after,
   .bs-popover-auto[x-placement^="right"] .arrow::after {
     left: 1px;
@@ -4033,7 +4033,7 @@ button.close {
   .bs-popover-bottom .arrow::before, .bs-popover-auto[x-placement^="bottom"] .arrow::before {
     top: 0;
     border-bottom-color: rgba(0, 0, 0, 0.25); }
-
+  
   .bs-popover-bottom .arrow::after,
   .bs-popover-auto[x-placement^="bottom"] .arrow::after {
     top: 1px;
@@ -4062,7 +4062,7 @@ button.close {
   .bs-popover-left .arrow::before, .bs-popover-auto[x-placement^="left"] .arrow::before {
     right: 0;
     border-left-color: rgba(0, 0, 0, 0.25); }
-
+  
   .bs-popover-left .arrow::after,
   .bs-popover-auto[x-placement^="left"] .arrow::after {
     right: 1px;
@@ -10519,7 +10519,11 @@ footer .bottom-bar {
       padding: 30px 15px 5px 15px; }
     .product-box .photo .buttons {
       display: flex;
-      justify-content: space-between; }
+      justify-content: space-between;
+      opacity: 0;
+      transition: opacity .3s; }
+  .product-box:hover .buttons {
+    opacity: 1; }
   .product-box .content {
     text-align: center;
     padding: 20px; }
@@ -10553,11 +10557,14 @@ footer .bottom-bar {
       border-color: #d58e32; }
       .product-box .actions a[active] i {
         color: #ffffff; }
+  .product-box .price .btn-main-small {
+    transition: background-color .3s; }
+  .product-box:hover .price .btn-main-small {
+    color: #ffffff;
+    background-color: #d58e32; }
 
 .section--features {
   padding: 5rem 0; }
 
 body {
   font-family: 'Poppins', sans-serif; }
-
-/*# sourceMappingURL=style.css.map */
