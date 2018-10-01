@@ -186,15 +186,47 @@ header {
           z-index: 0;
         }
 
-        select {
+        .select {
           -webkit-appearance: none;
           border: 0;
           background-color: transparent;
           outline: none;
           padding: 5px 30px 5px 35px;
           font-size: 14px;
+          line-height: 45px;
           position: relative;
           z-index: 1;
+          cursor: pointer;
+
+          .option-list {
+            position: absolute;
+            margin-left: -1px;
+            left: 0;
+            width: calc(100% + 2px);
+            padding-left: 0;
+            list-style: none;
+            text-align: center;
+            background-color: #ffffff;
+            z-index: 1;
+            transform: scaleY(0);
+            transform-origin: top;
+            transition: transform .25s;
+
+            li {
+              border: 1px solid $form-border-color;
+              border-top: 0;
+              height: 45px;
+
+              &:hover {
+                background-color: $primary;
+                color: #ffffff;
+              }
+            }
+          }
+
+          &:hover .option-list {
+            transform: scaleY(1);
+          }
         }
       }
 
