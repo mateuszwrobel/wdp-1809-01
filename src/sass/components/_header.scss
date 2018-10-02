@@ -198,10 +198,9 @@ header {
           z-index: 1;
           cursor: pointer;
 
-          .option-list {
+          .first-level {
             position: absolute;
-            margin-left: -1px;
-            left: 0;
+            left: -1px;
             width: calc(100% + 2px);
             padding-left: 0;
             list-style: none;
@@ -214,18 +213,46 @@ header {
 
             li {
               border: 1px solid $form-border-color;
-              border-top: 0;
+              margin-top: -1px;
               height: 45px;
+
+              p {
+                margin: 0;
+              }
 
               &:hover {
                 background-color: $primary;
+              }
+
+              &:hover > p {
                 color: #ffffff;
+              }
+
+              &.nest:hover .second-level {
+                transform: scaleX(1);
               }
             }
           }
 
-          &:hover .option-list {
+          &:hover .first-level {
             transform: scaleY(1);
+          }
+
+          .second-level {
+            position: absolute;
+            left: -1px;
+            width: calc(100% + 2px);
+            padding-left: 0;
+            list-style: none;
+            text-align: center;
+            background-color: #ffffff;
+            z-index: 1;
+            width: 100%;
+            left: calc(100% - 1px);
+            margin-top: -45px;
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform .25s;
           }
         }
       }
