@@ -157,6 +157,10 @@ header {
       }
     }
 
+    .menu-btn {
+      display: none;
+    }
+
     .search-form {
       border: 1px solid $form-border-color;
       display: inline-flex;
@@ -214,6 +218,113 @@ header {
           border: 0;
           background-color: transparent;
           outline: none;
+        }
+      }
+    }
+  }
+
+  @media (min-width: 640px) and (max-width: 1199px) {
+    .menu-bar {
+      .container > .row {
+        height: 168px;
+        flex-direction: column;
+      }
+
+      .menu {
+        justify-content: center;
+        height: 84px;
+        margin-bottom: 20px;
+      }
+
+      .search {
+        order: 2;
+        justify-content: center;
+        width: auto;
+      }
+    }
+  }
+
+  @media (max-width: 639px) {
+    .menu-bar {
+      height: 64px;
+
+      .menu {
+        width: 100%;
+        position: relative;
+
+        ul {
+          position: absolute;
+          transform: scaleY(0);
+          transform-origin: top;
+          flex-direction: column;
+          width: 100%;
+          left: 0;
+          z-index: 500;
+          box-shadow: 0 3.464px 6px rgba(1,2,2,0.2);          
+
+          &.transition {
+            transition: transform .25s ease-in-out;
+          }
+
+          &.show {
+            transform: scaleY(1);
+          }
+
+          li {
+            align-self: stretch;
+            border: solid 1px #b6b6b6;
+            border-top: 0;
+
+            a {
+              width: 100%;
+              justify-content: center;
+              background-color: #ffffff;
+            }
+          }
+        }
+      }
+
+      .menu-btn {
+        display: inline-block;
+        margin-right: 15px;
+        .btn-outline {
+          border: 0;
+          width: 45px;
+          height: 45px;
+          line-height: 45px;
+          background-color: $primary;
+          color: white;
+          text-align: center;
+
+          &:hover {
+            background-color: $primary;
+            color: white;
+          }
+        }
+      }
+    }
+  }
+
+  @media (max-width: 500px) {
+    .menu-bar {
+      height: 110px;
+
+      .container > .row {
+        height: 130px;
+        justify-content: center;
+      }
+
+      .search-form {
+        height: 90px;
+        flex-direction: column;
+
+        .category, .search-field {
+          height: 45px;
+          border: 0;
+        }
+
+        .category {
+          border-bottom: 1px solid $form-border-color;
         }
       }
     }
