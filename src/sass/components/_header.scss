@@ -106,28 +106,91 @@ header {
         }
       }
     }
+    @media (max-width: 289.98px) {
+      .container>.row {
+        height: auto;
 
-    @include media-breakpoint-down(sm) {
-      .container > .row{
-        flex-direction: column;
+        .col {
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+
+        .phone-number {
+          order: 3;
+          font-size: 14px;
+          text-align: left !important;
+        }
+
+        .logo {
+          order: 1;
+          text-align: left !important;
+        }
+
+        .cart {
+          order: 2;
+          text-align: left !important;
+        }
+      }
+    }
+
+    @media (max-width: 399.98px) and (min-width: 290px) {
+      .container>.row {
+        @media (min-width: 290px) {
+          height: 150px;
+        }
+
+        .col {
+          padding-top: 5px;
+          padding-bottom: 5px;
+        }
+
+        .phone-number {
+          order: 3;
+          font-size: 14px;
+
+          @media (min-width: 290px) {
+            position: relative;
+            top: -50px;
+          }
+
+          text-align: right !important;
+        }
+
+        .logo {
+          order: 1;
+        }
+
+        .cart {
+          order: 2;
+          text-align: left !important;
+        }
+      }
+    }
+
+    @media (max-width: 767.98px) and (min-width: 399.98px) {
+      .container>.row {
         position: relative;
+
         .phone-number {
           order: 3;
           font-size: 14px;
           text-align: right !important;
+          align-self: flex-start;
         }
+
         .logo {
           order: 1;
-            position: absolute;
-            top: 50%;
-            transform: translate(0%, -65%);
-            text-align: left !important;
+          position: absolute;
+          top: 50%;
+          transform: translate(0%, -60%);
+          text-align: left !important;
         }
+
         .cart {
           order: 2;
           display: flex;
-          align-items: flex-end;
           justify-content: flex-end;
+          align-self: flex-end;
         }
       }
     }
