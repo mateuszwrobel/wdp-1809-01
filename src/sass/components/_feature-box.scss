@@ -1,4 +1,5 @@
 .feature-box {
+  display: block;
   border: 1px solid #b6b6b6;
   text-align: center;
   margin-top: 40px;
@@ -49,7 +50,9 @@
     }
   }
 
+  &:hover,
   &.active {
+    text-decoration: none;
     i {
       background-color: $primary;
       color: #ffffff;
