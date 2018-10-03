@@ -31,7 +31,13 @@
     .buttons {
       display: flex;
       justify-content: space-between;
+      opacity: 0;
+      transition: opacity .3s;
     }
+  }
+
+  &:hover .buttons {
+    opacity: 1;
   }
 
   .content {
@@ -120,5 +126,14 @@
         }
       }
     }
+  }
+
+  .price .btn-main-small {
+    transition: background-color .3s;
+  }
+
+  &:hover .price .btn-main-small {
+    color: #ffffff;
+    background-color: $primary;
   }
 }
