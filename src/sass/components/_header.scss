@@ -228,9 +228,13 @@ header {
             border: 1px solid $form-border-color;
             margin-top: -1px;
             height: 45px;
+            padding: 0 5px;
 
             p {
               margin: 0;
+              white-space: nowrap;
+              overflow: hidden;
+              text-overflow: ellipsis;
             }
 
             &:hover {
