@@ -3,6 +3,7 @@
   border: 1px solid #b6b6b6;
   text-align: center;
   margin-top: 40px;
+  min-height: 121px;
 
   .icon {
     transform: translateY(-50%);
@@ -62,5 +63,11 @@
     .content {
       color: $primary;
     }
+  }
+}
+
+@media (max-width: 475px) {
+  .feature-box {
+    min-height: 142px;
   }
 }
