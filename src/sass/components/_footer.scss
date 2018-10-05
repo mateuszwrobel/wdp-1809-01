@@ -28,6 +28,11 @@ footer {
       }
     }
 
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+
     .payment-methods {
       margin: 0;
       padding: 0;
@@ -37,21 +42,32 @@ footer {
         display: inline-block;
       }
     }
+
+    @media (max-width: 320px) {
+      .container>.row>.col {
+        max-width: 100%;
+        flex: 0 0 100%;
+      }
+    }
   }
 
   .bottom-bar {
     background-color: $footer-claim-bg;
 
-    .container > .row {
+    .container>.row {
       height: 95px;
     }
 
     .copyright {
       p {
         margin: 0;
-        color: rgb(169,169,169);
+        color: rgb(169, 169, 169);
         font-size: 14px;
         line-height: 26px;
+      }
+
+      @media (max-width: 991.98px) {
+        order: 2;
       }
     }
 
@@ -74,6 +90,10 @@ footer {
             }
           }
         }
+      }
+
+      @media (max-width: 991.98px) {
+        order: 3;
       }
     }
   }
