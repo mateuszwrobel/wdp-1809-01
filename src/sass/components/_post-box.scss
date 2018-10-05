@@ -14,6 +14,7 @@
 
     .cover {
       padding: 70% 25px 0 25px;
+      position: relative;
       background: {
         color: #f4f5f7;
         size: cover;
@@ -41,6 +42,8 @@
       }
     }
 
+    @include blog-img(3);
+
     .post-info {
       padding: 25px;
 
@@ -67,6 +70,6 @@
           transition: background-color .3s;
         }
       }
-    }    
+    }
   }
 }
