@@ -1,7 +1,24 @@
+
 @mixin brand-img($amount) {
   @for $i from 1 to $amount+1 {
     .brand-img-#{$i} {
       background-image: url('../images/brands/brand_' + $i + '.png');
+    }
+  }
+}
+
+@mixin product-img($amount) {
+  @for $i from 1 to $amount+1 {
+    .product-img-#{$i} {
+      background-image: url('../images/products/product_' + $i + '.jpg');
+    }
+  }
+}
+
+@mixin blog-img($amount) {
+  @for $i from 1 to $amount+1 {
+    .blog-img-#{$i} {
+      background-image: url('../images/blog/blog_' + $i + '.jpg');
     }
   }
 }
