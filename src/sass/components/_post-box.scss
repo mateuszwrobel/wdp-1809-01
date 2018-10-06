@@ -5,7 +5,7 @@
     text-decoration: none;
 
     .post-info h5 {
-      @extend .hover-color-animation;
+      @extend %hover-color-animation;
     }
 
     &:hover .post-info h5 {

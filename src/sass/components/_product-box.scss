@@ -29,7 +29,7 @@
     }
 
     .buttons {
-      @extend .hover-opacity-animation;
+      @extend %hover-opacity-animation;
       display: flex;
       justify-content: space-between;
       opacity: 0;

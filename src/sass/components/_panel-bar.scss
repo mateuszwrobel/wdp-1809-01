@@ -46,7 +46,7 @@
           display: block;
 
           &::before {
-            @extend .hover-color-animation;
+            @extend %hover-color-animation;
             content: '';
             position: absolute;
             bottom: -4px;
@@ -79,7 +79,7 @@
         margin-left: 0.5rem;
 
         a {
-          @extend .hover-color-animation;
+          @extend %hover-color-animation;
           display: block;
           width: 13px;
           height: 13px;

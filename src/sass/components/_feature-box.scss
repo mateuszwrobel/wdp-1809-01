@@ -9,7 +9,7 @@
     transform: translateY(-50%);
 
     i {
-      @extend .hover-color-animation;
+      @extend %hover-color-animation;
       width: 60px;
       height: 60px;
       border-radius: 100%;
@@ -37,7 +37,7 @@
   }
 
   .content {
-    @extend .hover-color-animation;
+    @extend %hover-color-animation;
     text-transform: uppercase;
     color: rgb(42,42,42);
     margin-top: -0.5rem;
