@@ -12,6 +12,7 @@ header {
         line-height: 55px;
 
         a {
+          @extend .hover-color-animation;
           color: #ffffff;
           font-size: 13px;
 
@@ -72,6 +73,7 @@ header {
         color: #ffffff;
 
         .cart-icon {
+          @extend .hover-color-animation;
           background-color: $primary;
           width: 55px;
           height: 50px;
@@ -131,6 +133,7 @@ header {
           align-items: stretch;
 
           a {
+            @extend .hover-color-animation;
             color: $text-color;
             text-transform: uppercase;
             font-size: 12px;
@@ -225,6 +228,7 @@ header {
           transition: transform .25s;
 
           li {
+            @extend .hover-color-animation;
             border: 1px solid $form-border-color;
             margin-top: -1px;
             height: 45px;

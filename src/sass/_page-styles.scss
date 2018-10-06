@@ -1,0 +1,9 @@
+.hover-color-animation {
+  transition-property: color, background-color, border-color;
+  transition-duration: .25s, .25s, .25s;
+  transition-timing-function: linear;
+}
+
+.hover-opacity-animation {
+  transition: opacity .25s linear;
+}

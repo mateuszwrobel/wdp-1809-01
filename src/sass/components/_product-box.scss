@@ -29,10 +29,10 @@
     }
 
     .buttons {
+      @extend .hover-opacity-animation;
       display: flex;
       justify-content: space-between;
       opacity: 0;
-      transition: opacity .3s;
     }
   }
 

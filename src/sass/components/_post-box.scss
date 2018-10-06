@@ -4,6 +4,10 @@
   .cover-link {
     text-decoration: none;
 
+    .post-info h5 {
+      @extend .hover-color-animation;
+    }
+
     &:hover .post-info h5 {
       color: $primary;
     }
