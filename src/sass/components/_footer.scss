@@ -17,8 +17,11 @@ footer {
         li {
           a {
             font-size: 14px;
-            line-height: 30px;
+            line-height: normal;
             color: rgb(169,169,169);
+            display: block;
+            margin-bottom: 7px;
+            margin-top: 7px;
 
             &:hover {
               color: #ffffff;
