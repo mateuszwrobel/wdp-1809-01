@@ -3,14 +3,18 @@
   position: relative;
 
   .photo {
-    padding: 42% 10px 0 10px;
+    padding: 40% 10px 0 10px;
 
     .buttons {
       justify-content: center;
     }
 
     .counter {
-      margin-top: 75px;
+      /*Kiedy branch bug-WDP180901-9 zostanie zmergowany do mastera, należy odkomentoać poniższą linię kodu w celu dodania animacji przezroczystości tego elementu jedolitej pozostałą treścią strony
+      extend %hover-opacity-animation;
+      */
+      margin-top: 77px;
+      margin-bottom: 10px;
       color: #fff;
       text-align: center;
       opacity: 0;
