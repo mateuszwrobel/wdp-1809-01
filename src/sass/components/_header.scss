@@ -12,6 +12,7 @@ header {
         line-height: 55px;
 
         a {
+          @extend %hover-color-animation;
           color: #ffffff;
           font-size: 13px;
 
@@ -72,6 +73,7 @@ header {
         color: #ffffff;
 
         .cart-icon {
+          @extend %hover-color-animation;
           background-color: $primary;
           width: 55px;
           height: 50px;
@@ -213,12 +215,17 @@ header {
         padding: 0;
         display: flex;
 
+        &.transition {
+          @extend %hover-transform-animation;
+        }
+
         li {
           list-style: none;
           display: flex;
           align-items: stretch;
 
           a {
+            @extend %hover-color-animation;
             color: $text-color;
             text-transform: uppercase;
             font-size: 12px;
@@ -306,13 +313,14 @@ header {
 
         .first-level {
           @extend .dropdown-list;
+          @extend %hover-transform-animation;
           width: calc(100% + 2px);
           left: -1px;
           transform: scaleY(0);
           transform-origin: top;
-          transition: transform .25s;
 
           li {
+            @extend %hover-color-animation;
             border: 1px solid $form-border-color;
             margin-top: -1px;
             height: 45px;
@@ -341,12 +349,12 @@ header {
 
         .second-level {
           @extend .dropdown-list;
+          @extend %hover-transform-animation;
           width: 100%;
           left: calc(100% - 1px);
           margin-top: -45px;
           transform: scaleX(0);
           transform-origin: left;
-          transition: transform .25s;
         }
       }
 
@@ -413,10 +421,6 @@ header {
           left: 0;
           z-index: 500;
           box-shadow: 0 3.464px 6px rgba(1,2,2,0.2);
-
-          &.transition {
-            transition: transform .25s ease-in-out;
-          }
 
           &.show {
             transform: scaleY(1);

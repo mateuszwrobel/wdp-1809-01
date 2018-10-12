@@ -1,6 +1,6 @@
 .panel-bar {
   margin-bottom: 30px;
-  
+
   .row > * {
     border-bottom: 4px solid #e2e2e2;
   }
@@ -46,15 +46,20 @@
           font-size: 18px;
           display: block;
 
+          &::before {
+            @extend %hover-color-animation;
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 100%;
+            border-bottom: 4px solid rgba(0,0,0,0);
+          }
+
           &.active,
           &:hover {
             &::before {
-              content: '';
-              position: absolute;
-              bottom: -4px;
-              left: 0;
-              width: 100%;
-              border-bottom: 4px solid $primary;
+              border-color: $primary;
             }
           }
         }
@@ -75,6 +80,7 @@
         margin-left: 0.5rem;
 
         a {
+          @extend %hover-color-animation;
           display: block;
           width: 13px;
           height: 13px;
