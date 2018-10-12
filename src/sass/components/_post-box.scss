@@ -4,6 +4,10 @@
   .cover-link {
     text-decoration: none;
 
+    .post-info h5 {
+      @extend %hover-color-animation;
+    }
+
     &:hover .post-info h5 {
       color: $primary;
     }
@@ -28,7 +32,7 @@
         font-size: 14px;
         color: $text-color;
 
-        & > * {
+        &>* {
           flex: 1 1 auto;
         }
 
@@ -38,6 +42,24 @@
 
         .comments {
           text-align: right;
+
+          @media (max-width: 320px) {
+            text-align: left;
+          }
+        }
+
+        @media (max-width: 320px) {
+          flex-direction: column;
+        }
+
+        @media (max-width: 1199.98px) and (min-width: 992px) {
+          .date {
+            padding-right: 1px;
+          }
+
+          span {
+            display: block;
+          }
         }
       }
     }
@@ -58,7 +80,7 @@
       p {
         font-size: 14px;
         line-height: 24px;
-        color: rgb(103,103,103);
+        color: rgb(103, 103, 103);
         text-align: left;
       }
 
