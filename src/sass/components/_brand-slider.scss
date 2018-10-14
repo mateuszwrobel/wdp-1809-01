@@ -1,0 +1,64 @@
+.brand-slider {
+  display: flex;
+  justify-content: space-between;
+  border-top: 1px solid #cbcbcb;
+  border-bottom: 1px solid #cbcbcb;
+  padding-top: 23px;
+  padding-bottom: 23px;
+  margin: 2rem 0;
+
+  .left-arrow,
+  .right-arrow {
+    width: 33px;
+    height: 92px;
+    background-color: $form-border-color;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i {
+      width: 6px;
+      height: 11px;
+      color: #fff;
+    }
+
+    &:hover,
+    &:active {
+      i {
+        color: $primary;
+      }
+    }
+  }
+
+  .brand-wrapper {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+
+    li {
+      background-color: #fff;
+      padding-left: 15px;
+      padding-right: 15px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      @include brand-img(6);
+
+      .brand {
+        width: 143px;
+        height: 92px;
+        border: 1px solid #cbcbcb;
+
+        background: {
+          color: #fff;
+          size: auto;
+          position: center;
+          repeat: no-repeat;
+        }
+      }
+    }
+  }
+}
