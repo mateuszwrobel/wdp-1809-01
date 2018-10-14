@@ -1,0 +1,7 @@
+@mixin brand-img($amount) {
+  @for $i from 1 to $amount+1 {
+    .brand-img-#{$i} {
+      background-image: url('../images/brands/brand_' + $i + '.png');
+    }
+  }
+}

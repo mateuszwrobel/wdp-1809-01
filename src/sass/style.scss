@@ -1,4 +1,5 @@
 @import "variables";
+@import "mixins";
 
 @import url('https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900');
 
@@ -18,6 +19,7 @@
 @import "components/panel-bar";
 @import "components/post-box";
 @import "components/product-box";
+@import "components/brand-slider";
 
 @import "components/section--features";
 @import "components/section--products";
