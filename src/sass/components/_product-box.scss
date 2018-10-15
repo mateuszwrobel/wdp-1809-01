@@ -3,13 +3,15 @@
   border: 1px solid #e1e1e1;
   margin-bottom: 2rem;
 
+  @include product-img(8);
+
   .photo {
     position: relative;
     padding: 80% 10px 0 10px;
 
     background: {
       color: #f4f5f7;
-      size: contain;
+      size: cover;
       position: center;
       repeat: no-repeat;
     }
@@ -45,7 +47,6 @@
     padding: 20px;
 
     h5 {
-      color: $primary;
       font-size: 16px;
       line-height: 24px;
       letter-spacing: 1px;
@@ -135,5 +136,9 @@
   &:hover .price .btn-main-small {
     color: #ffffff;
     background-color: $primary;
+  }
+
+  &:hover .content h5 {
+    color: $primary;
   }
 }
