@@ -1,0 +1,72 @@
+.highlight-products {
+  position: relative;
+  padding-top:136px;
+  width: 100%;
+  height: 485px;
+  background: {
+    color: #cccccc;
+    size: cover;
+    position: center;
+    repeat: no-repeat;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 210px;
+    background-color: rgba(0,0,0,.5);
+    color: white;
+    text-align: center;
+    text-transform: uppercase;
+
+    h1 {
+      margin-bottom: 0;
+      font-size: 3.2rem;
+      font-weight: 300;
+
+      .black {
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+    }
+
+    h4 {
+      font-weight: 300;
+    }
+
+    .action-btn {
+      position: absolute;
+      text-align: center;
+      text-transform: uppercase;
+      transform: translateY(105px);
+
+      .btn-main {
+        color: $text-color;
+        background-color: #ffffff;
+        margin-top: -20px;
+        border-radius: 3px;
+        padding: 16px 30px;
+
+        &:hover {
+          color: #ffffff;
+          background-color: $text-color;
+        }
+      }
+    }
+  }
+
+  .control-buttons {
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+
+    .btn-main {
+      float: left;
+      width: 50%;
+      text-align: center;
+    }
+  }
+}
