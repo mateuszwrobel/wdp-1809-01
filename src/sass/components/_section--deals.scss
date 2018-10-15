@@ -1,0 +1,119 @@
+.section--deals {
+  margin-bottom: 2.7rem;
+  text-transform: uppercase;
+
+  .left-side {
+    height: 420px;
+    padding: 33px;
+    color: #ffffff;
+
+    background: {
+      color: #6a6a6a;
+      image: url('../images/deals/deals_sofa.jpg');
+      size: cover;
+      position: center;
+      repeat: no-repeat;
+    }
+
+    .text-container {
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      align-items: flex-start;
+      padding: 19px;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(42,42,42,.4);
+
+      .regular {
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 36px;
+      }
+
+      .big {
+        font-size: 60px;
+        font-weight: 700;
+        line-height: 60px;
+      }
+
+      .discount {
+        border: 5px solid #ffffff;
+        margin-top: 10px;
+        padding: 0 13px;
+        font-size: 50px;
+        line-height: 70px;
+      }
+    }
+  }
+
+  .right-side {
+    .top, .bottom {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+
+    .bold {
+      font-weight: 700;
+    }
+
+    .top {
+      height: 195px;
+      margin-bottom: 30px;
+      padding: 30px 30px 30px 177px;
+
+      background: {
+        color: #e8edf7;
+        image: url('../images/deals/deals_chairs.png');
+        size: cover;
+        position: center;
+        repeat: no-repeat;
+      }
+
+      .big {
+        font-size: 30px;
+        font-weight: 300;
+        line-height: 32px;
+      }
+
+      .small {
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: 3px;
+      }
+
+      .price {
+        font-size: 36px;
+        font-weight: 600;
+        line-height: 50px;
+        color: $primary;
+      }
+    }
+
+    .bottom {
+      height: 195px;
+      align-items: flex-end;
+      padding: 23px;
+
+      background: {
+        color: #fbf3f7;
+        image: url('../images/deals/deals_bed.png');
+        size: cover;
+        position: center;
+        repeat: no-repeat;
+      }
+
+      .big {
+        font-size: 24px;
+        font-size: 200;
+        line-height: 30px;
+        color: $primary;
+      }
+
+      .small {
+        font-size: 18px;
+      }
+    }
+  }
+}
