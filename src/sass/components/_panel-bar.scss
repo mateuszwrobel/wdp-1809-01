@@ -1,6 +1,6 @@
 .panel-bar {
   margin-bottom: 30px;
-
+  
   .row > * {
     border-bottom: 4px solid #e2e2e2;
   }
@@ -82,10 +82,6 @@
 
           &.active,
           &:hover {
-            background-color: $primary;
-          }
-
-          &[active] {
             background-color: $primary;
           }
         }
