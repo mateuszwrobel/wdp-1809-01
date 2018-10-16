@@ -13,6 +13,7 @@
     document.getElementById('main-menu').classList.remove('show');
   });
 
+  //Create dots for slider navigation
   var numberOfSlides = document.querySelectorAll('.blog-slider > div').length;
   for (var i = 0; i < numberOfSlides; i++) {
     var dot = document.createElement('li');
@@ -21,6 +22,7 @@
     document.querySelector('.blog-slider-nav').appendChild(dot);
   }
 
+  //Add slider options
   var slider = tns({
     "container": ".blog-slider",
     "navContainer": ".blog-slider-nav",
@@ -45,6 +47,7 @@
     }
   });
 
+  //remove Bootstrap's grid
   var removeGrid = document.getElementsByClassName('tns-item');
   for (var i = 0; i < removeGrid.length; i++) {
     var classesToRemove = removeGrid[i].classList.value.match(/\bcol-[^\s]*/g);

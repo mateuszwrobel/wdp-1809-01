@@ -30,7 +30,5 @@
     "onchange": "^4.1.0",
     "rimraf": "^2.6.2"
   },
-  "dependencies": {
-    "tiny-slider": "^2.8.7"
-  }
+  "dependencies": {}
 }
