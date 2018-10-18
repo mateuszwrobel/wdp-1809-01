@@ -11,3 +11,5 @@
 %hover-transform-animation {
   transition: transform .25s linear;
 }
+
+@include product-img(16);

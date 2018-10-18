@@ -2,7 +2,7 @@
   .current-photo {
     position: relative;
     width: 100%;
-    height: 360px;
+    height: 400px;
 
     background: {
       size: cover;
@@ -13,7 +13,8 @@
     .outlines {
       position: absolute;
       left: 7px;
-      top: 27%;
+      transform: translateY(-50%);
+      top: 50%;
 
       .btn-outline {
         display: block;
@@ -34,7 +35,7 @@
         }
 
         .btn-tooltip {
-          /*@extend %hover-opacity-animation;*/
+          @extend %hover-opacity-animation;
           position: absolute;
           transform: translateY(-50%);
           top: 50%;
@@ -131,8 +132,6 @@
       }
     }
   }
-
-  @include product-img(15);
 
   .thumbnails {
     position: relative;
