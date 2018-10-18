@@ -1,0 +1,87 @@
+.hot-deals {
+  @extend .product-box;
+  position: relative;
+
+  .photo {
+    margin-top: 50px;
+    padding: 25% 10px 0 10px;
+    background-image: url('../images/promoted/promoted_1.png');
+
+    .buttons {
+      justify-content: center;
+    }
+
+    .counter {
+      @extend %hover-opacity-animation;
+      margin-top: 77px;
+      margin-bottom: 10px;
+      color: #fff;
+      text-align: center;
+      opacity: 0;
+
+      .round-box {
+        margin: 0 .05rem;
+        display: inline-flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 4.4rem;
+        height: 4.4rem;
+        background-color: $header-bg;
+        border-radius: 50%;
+
+        h4 {
+          margin-bottom: .1rem;
+        }
+
+        h6 {
+          margin: 0;
+          text-transform: uppercase;
+          font-size: .85rem;
+        }
+      }
+    }
+
+    &:hover .counter {
+      opacity: 1;
+    }
+
+    &:hover .buttons {
+      opacity: 1;
+    }
+  }
+
+  .header {
+    @extend .panel-bar;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    background-color: #2a2a2a;
+    padding: 5px 20px;
+
+    .heading {
+      &::before {
+        display: none;
+      }
+
+      h3 {
+        color: #fff;
+      }
+    }
+
+    .dots ul {
+      background-color: rgba(0,0,0,0);
+      text-align: right;
+      transform: translateY(-5px);
+
+      li {
+        margin-left: 0.3rem;
+      }
+    }
+  }
+
+  &:hover .buttons{
+    opacity: 0;
+  }
+}
