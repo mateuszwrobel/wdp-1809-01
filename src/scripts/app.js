@@ -1,15 +1,15 @@
-(function() {
-  document.getElementById('main-menu-btn').addEventListener('click', function(e) {
+(function () {
+  document.getElementById('main-menu-btn').addEventListener('click', function (e) {
     document.getElementById('main-menu').classList.add('transition');
     document.getElementById('main-menu').classList.toggle('show');
   });
 
-  window.addEventListener('resize', function(e) {
+  window.addEventListener('resize', function (e) {
     document.getElementById('main-menu').classList.remove('transition');
     document.getElementById('main-menu').classList.remove('show');
   });
 
-  document.getElementById('main-menu').addEventListener('click', function(e) {
+  document.getElementById('main-menu').addEventListener('click', function (e) {
     document.getElementById('main-menu').classList.remove('show');
   });
 
@@ -53,4 +53,35 @@
     var classesToRemove = removeGrid[i].classList.value.match(/\bcol-[^\s]*/g);
     removeGrid[i].classList.remove(...classesToRemove);
   }
+  
+  function openTab(evt, tab) {
+    // Declare all variables
+    var i, tabcontent, tablinks;
+    document.querySelector('.panel-bar .menu ul li a').classList.remove('active');
+
+    // Get all elements with class="tabcontent" and hide them
+    tabcontent = document.getElementsByClassName("tab-pane");
+    for (i = 0; i < tabcontent.length; i++) {
+      tabcontent[i].style.display = "none";
+    }
+
+    // Get all elements with class="tablinks" and remove the class "active"
+    tablinks = document.getElementsByClassName("nav-item");
+    for (i = 0; i < tablinks.length; i++) {
+      tablinks[i].classList.remove('active');
+    }
+
+    // Show the current tab, and add an "active" class to the button that opened the tab
+    document.getElementById(tab).style.display = "flex";
+    evt.currentTarget.classList.add('active');
+  }
+
+  document.querySelectorAll('.nav-item').forEach(function (item) {
+    item.addEventListener('click', function (e) {
+      openTab(e, e.target.getAttribute('id').split('-')[0]);
+    });
+  });
+  
+  document.querySelector('.panel-bar .menu ul li a').classList.add('active');
+
 })();

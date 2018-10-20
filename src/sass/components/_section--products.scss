@@ -1,3 +1,17 @@
-.tab-content >.active {
+.tab-content>.active {
     display: flex;
+
+}
+
+.tab-pane {
+    animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
