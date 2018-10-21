@@ -15,3 +15,11 @@
         opacity: 1;
     }
 }
+
+.panel-bar .dots.products-slider-nav ul li {
+    display: none !important;
+
+    &.visible {
+        display: inline-block !important;
+    }
+}
