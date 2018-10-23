@@ -13,19 +13,29 @@
     document.getElementById('main-menu').classList.remove('show');
   });
 
-<<<<<<< HEAD
-  //Create dots for slider navigation
-  var numberOfSlides = document.querySelectorAll('.blog-slider > div').length;
-  for (var i = 0; i < numberOfSlides; i++) {
-    var dot = document.createElement('li');
-    var href = document.createElement('a');
-    dot.appendChild(href);
-    document.querySelector('.blog-slider-nav').appendChild(dot);
-  }
+  //Create dots for slider navigation, it requires slider container id and ul selector for dots navigation
+  var createDots = function (SliderId, listSelector) {
+    var numberOfSlides = document.querySelectorAll('#' + SliderId + ' > div').length;
+    for (var i = 0; i < numberOfSlides; i++) {
+      var dot = document.createElement('li');
+      var href = document.createElement('a');
+      dot.appendChild(href);
+      document.querySelector(listSelector).appendChild(dot);
+    }
+  };  
 
-  //Add slider options
-  var slider = tns({
-    "container": ".blog-slider",
+  var removeDots = function(){
+    document.querySelectorAll('.products-slider-nav ul li').forEach(function(item){
+    item.parentNode.removeChild(item);   
+    });
+  };
+
+  //Create dots for blog slider navigation
+  createDots('blog-slider', '.blog-slider-nav');
+  
+  //Add blog slider options
+  var blogSlider = tns({
+    "container": "#blog-slider",
     "navContainer": ".blog-slider-nav",
     "controls": false,
     "navAsThumbnails": true,
@@ -48,63 +58,40 @@
     }
   });
 
-  //remove Bootstrap's grid
-  var removeGrid = document.getElementsByClassName('tns-item');
-  for (var i = 0; i < removeGrid.length; i++) {
-    var classesToRemove = removeGrid[i].classList.value.match(/\bcol-[^\s]*/g);
-    removeGrid[i].classList.remove(...classesToRemove);
-  }
-  
-=======
-  
-
-  //Create dots for product-slider navigation
-  var createDots = function (SliderId) {
-    var numberOfSlides = document.querySelectorAll('#' + SliderId + ' > div').length;
-    for (var i = 0; i < numberOfSlides; i++) {
-      var dot = document.createElement('li');
-      var href = document.createElement('a');
-      dot.appendChild(href);
-      document.querySelector('.products-slider-nav ul').appendChild(dot);
+  //remove Bootstrap's grid for slider to work correctly
+  var removeGrid = function(){
+    var elementsWithGrid = document.getElementsByClassName('tns-item');
+    for (var i = 0; i < elementsWithGrid.length; i++) {
+      var classesToRemove = elementsWithGrid[i].classList.value.match(/\bcol-[^\s]*/g);
+      elementsWithGrid[i].classList.remove(...classesToRemove);
     }
-  };
-
-  var removeDots = function(){
-    document.querySelectorAll('.products-slider-nav ul li').forEach(function(item){
-    item.parentNode.removeChild(item);   
-    });
   };
 
   //media query and event's listeners for dots
   function myFunctionLarge(mq) {
     if (mq.matches) { // If the viewport is more than 992px
-      var dotsList = document.querySelectorAll('.products-slider-nav ul li');
-      dotsList.forEach(function(item){ item.classList.remove('visible');});
-      //hide dots not needed for current media query
-      var i = 0;
-      for (i; i < dotsList.length; i += 4) {
-        dotsList.item(i).classList.add('visible');
-      }
-      if (dotsList.length % 4 != 0) {
-        dotsList.item(i - 4).classList.remove('visible');
-        dotsList.item(dotsList.length - 4).classList.add('visible');
-      }
+      myFunctionHelper(4);
     } 
   }
 
   function myFunctionMedium(mq) {
     if (mq.matches) { // If the viewport is more than 768px and less than 991.98px
-      var dotsList = document.querySelectorAll('.products-slider-nav ul li');
-      dotsList.forEach(function(item){ item.classList.remove('visible');});
-      //hide dots not needed for current media query
-      for (var i = 0; i < dotsList.length; i += 2) {
-        dotsList.item(i).classList.add('visible');
-      }
-      if (dotsList.length % 2 != 0) {
-        dotsList.item(i - 2).classList.remove('visible');
-        dotsList.item(dotsList.length - 2).classList.add('visible');
-      }
+      myFunctionHelper(2);
     }
+  }
+
+  function myFunctionHelper(slidesPerPage) {
+    var dotsList = document.querySelectorAll('.products-slider-nav ul li');
+    dotsList.forEach(function(item){ item.classList.remove('visible');});
+    //hide dots not needed for current media query
+    for (var i = 0; i < dotsList.length; i += slidesPerPage) {
+      dotsList.item(i).classList.add('visible');
+    }
+    if (dotsList.length % slidesPerPage != 0) {
+      dotsList.item(i - slidesPerPage).classList.remove('visible');
+      dotsList.item(dotsList.length - slidesPerPage).classList.add('visible');
+    }
+
   }
 
   function myFunctionSmall(mq) {
@@ -122,18 +109,9 @@
   var largeDevice = window.matchMedia("(min-width: 992px)");
   largeDevice.addListener(myFunctionLarge); // Attach listener function on state changes
 
-  //remove Bootstrap's grid for slider to work correctly
-  var removeGrid = function(){
-    var elementsWithGrid = document.getElementsByClassName('tns-item');
-    for (var i = 0; i < elementsWithGrid.length; i++) {
-      var classesToRemove = elementsWithGrid[i].classList.value.match(/\bcol-[^\s]*/g);
-      elementsWithGrid[i].classList.remove(...classesToRemove);
-    }
-  };
-
-  var slider;
+  var productSlider;
   var startSlider = function(sliderId){
-    slider = tns({
+    productSlider = tns({
       "container": "#" + sliderId,
       "navContainer": ".products-slider-nav ul",
       "controls": false,
@@ -166,20 +144,19 @@
   
   //TABS
 
->>>>>>> Add slider in section products
   function openTab(evt, tab) {
     // Declare all variables
     var i, tabcontent, tablinks;
     document.querySelector('.panel-bar .menu ul li a').classList.remove('active');
 
     // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tab-pane");
+    tabcontent = document.querySelectorAll('.section--products .tab-pane');
     for (i = 0; i < tabcontent.length; i++) {
       tabcontent[i].style.display = "none";
     }
 
     // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("nav-item");
+    tablinks = document.querySelectorAll('.section--products .panel-bar .menu .nav-item');
     for (i = 0; i < tablinks.length; i++) {
       tablinks[i].classList.remove('active');
     }
@@ -189,13 +166,13 @@
     evt.currentTarget.classList.add('active');
   }
 
-  document.querySelectorAll('.nav-item').forEach(function (item) {
+  document.querySelectorAll('.section--products .panel-bar .menu .nav-item').forEach(function (item) {
     item.addEventListener('click', function (e) {
-      slider.destroy();
+      productSlider.destroy();
       removeDots();
       var newSliderId = e.target.getAttribute('id').split('-')[0];
       openTab(e, newSliderId);
-      createDots(newSliderId);
+      createDots(newSliderId, '.products-slider-nav ul');
       myFunctionSmall(smallDevice);
       myFunctionMedium(mediumDevice);
       myFunctionLarge(largeDevice);
@@ -205,7 +182,7 @@
   
   //Prepare section products
   document.querySelector('.panel-bar .menu ul li a').classList.add('active');
-  createDots('bed');
+  createDots('bed','.products-slider-nav ul');
   // Call listener's functions at run time
   myFunctionSmall(smallDevice);
   myFunctionMedium(mediumDevice);
