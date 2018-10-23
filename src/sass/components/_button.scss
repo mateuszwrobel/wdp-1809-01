@@ -36,3 +36,42 @@
     color: #ffffff;
   }
 }
+
+.prev-btn, .next-btn {
+  /*@extend %hover-color-animation;*/
+  position: absolute;
+  width: 33px;
+  height: 68px;
+  background-color: #2a2a2a;
+  color: #ffffff;
+  line-height: 68px;
+  text-align: center;
+
+  &:hover {
+    color: $primary;
+  }
+}
+
+.prev-btn {
+  left: 7px;
+}
+
+.next-btn {
+  right: 7px;
+}
+
+.btn-green {
+  display: inline-block;
+  background-color: #79ae30;
+  color: #ffffff;
+  font-size: 14px;
+  text-transform: uppercase;
+  font-weight: 600;
+  padding: 17px 30px;
+  border-radius: 3px;
+  text-decoration: none !important;
+
+  &:hover {
+    background-color: #8cc837;
+  }
+}

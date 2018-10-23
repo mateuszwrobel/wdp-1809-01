@@ -1,0 +1,49 @@
+.section--gallery {
+  margin-top: 1.5rem;
+  margin-bottom: 3.5rem;  
+
+  .gallery-right-side {
+    width: 100%;
+    height: 100%;
+    padding: 70px 60px;
+
+    background: {
+      color: #e8edf7;
+      size: cover;
+      position: center;
+      repeat: no-repeat;
+    }
+
+    /*Text sizes*/
+    .small {
+      padding-right: 8px;
+      font-size: 18px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .big {
+      font-size: 48px;
+      line-height: 65px;
+      font-weight: 600;
+      text-transform: capitalize;
+    }
+
+    /*Text colors*/
+    .green {
+      color: #79ae30;
+    }
+
+    .orange {
+      color: $primary;
+    }
+
+    .btn-green {
+      margin-top: 20px;
+
+      &:hover {
+        color: #ffffff;
+      }
+    }
+  }
+}
