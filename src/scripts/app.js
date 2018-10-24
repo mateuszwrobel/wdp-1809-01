@@ -14,7 +14,7 @@
   });
 
   //Create dots for slider navigation, it requires slider container id and ul selector for dots navigation
-  var createDots = function (SliderId, listSelector) {
+  function createDots(SliderId, listSelector) {
     var numberOfSlides = document.querySelectorAll('#' + SliderId + ' > div').length;
     for (var i = 0; i < numberOfSlides; i++) {
       var dot = document.createElement('li');
@@ -24,7 +24,7 @@
     }
   };  
 
-  var removeDots = function(){
+  function removeDots(){
     document.querySelectorAll('.products-slider-nav ul li').forEach(function(item){
     item.parentNode.removeChild(item);   
     });
@@ -59,7 +59,7 @@
   });
 
   //remove Bootstrap's grid for slider to work correctly
-  var removeGrid = function(){
+  function removeGrid(){
     var elementsWithGrid = document.getElementsByClassName('tns-item');
     for (var i = 0; i < elementsWithGrid.length; i++) {
       var classesToRemove = elementsWithGrid[i].classList.value.match(/\bcol-[^\s]*/g);
@@ -68,19 +68,19 @@
   };
 
   //media query and event's listeners for dots
-  function myFunctionLarge(mq) {
+  function screenCheckLarge(mq) {
     if (mq.matches) { // If the viewport is more than 992px
-      myFunctionHelper(4);
+      screenCheckHelper(4);
     } 
   }
 
-  function myFunctionMedium(mq) {
+  function screenCheckMedium(mq) {
     if (mq.matches) { // If the viewport is more than 768px and less than 991.98px
-      myFunctionHelper(2);
+      screenCheckHelper(2);
     }
   }
 
-  function myFunctionHelper(slidesPerPage) {
+  function screenCheckHelper(slidesPerPage) {
     var dotsList = document.querySelectorAll('.products-slider-nav ul li');
     dotsList.forEach(function(item){ item.classList.remove('visible');});
     //hide dots not needed for current media query
@@ -94,23 +94,23 @@
 
   }
 
-  function myFunctionSmall(mq) {
+  function screenCheckSmall(mq) {
     if (mq.matches) { // If the viewport is 767.98px wide or less
       document.querySelectorAll('.products-slider-nav ul li').forEach(function(item){ item.classList.add('visible');});
     }
   }
 
   var smallDevice = window.matchMedia("(max-width: 767.98px)");
-  smallDevice.addListener(myFunctionSmall); // Attach listener function on state changes
+  smallDevice.addListener(screenCheckSmall); // Attach listener function on state changes
 
   var mediumDevice = window.matchMedia("(max-width: 991.98px) and (min-width: 768px)");
-  mediumDevice.addListener(myFunctionMedium); // Attach listener function on state changes
+  mediumDevice.addListener(screenCheckMedium); // Attach listener function on state changes
 
   var largeDevice = window.matchMedia("(min-width: 992px)");
-  largeDevice.addListener(myFunctionLarge); // Attach listener function on state changes
+  largeDevice.addListener(screenCheckLarge); // Attach listener function on state changes
 
   var productSlider;
-  var startSlider = function(sliderId){
+  function startSlider(sliderId){
     productSlider = tns({
       "container": "#" + sliderId,
       "navContainer": ".products-slider-nav ul",
@@ -173,9 +173,9 @@
       var newSliderId = e.target.getAttribute('id').split('-')[0];
       openTab(e, newSliderId);
       createDots(newSliderId, '.products-slider-nav ul');
-      myFunctionSmall(smallDevice);
-      myFunctionMedium(mediumDevice);
-      myFunctionLarge(largeDevice);
+      screenCheckSmall(smallDevice);
+      screenCheckMedium(mediumDevice);
+      screenCheckLarge(largeDevice);
       startSlider(newSliderId);
     });
   });
@@ -184,9 +184,9 @@
   document.querySelector('.panel-bar .menu ul li a').classList.add('active');
   createDots('bed','.products-slider-nav ul');
   // Call listener's functions at run time
-  myFunctionSmall(smallDevice);
-  myFunctionMedium(mediumDevice);
-  myFunctionLarge(largeDevice);
+  screenCheckSmall(smallDevice);
+  screenCheckMedium(mediumDevice);
+  screenCheckLarge(largeDevice);
   startSlider('bed');
 
 })();
