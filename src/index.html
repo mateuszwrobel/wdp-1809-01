@@ -269,25 +269,22 @@
             <h3>New furniture</h3>
           </div>
           <div class="col menu">
-            <ul class="nav" id="myTab" role="tablist">
-              <li class="nav-item"><a class="nav-link active" id="bed-tab" data-toggle="tab" href="#bed" role="tab" aria-controls="bed" aria-selected="true">Bed</a></li>
-              <li class="nav-item"><a class="nav-link" id="chair-tab" data-toggle="tab" href="#chair" role="tab" aria-controls="chair" aria-selected="false">Chair</a></li>
-              <li class="nav-item"><a class="nav-link" id="sofa-tab" data-toggle="tab" href="#sofa" role="tab" aria-controls="sofa" aria-selected="false">Sofa</a></li>
-              <li class="nav-item"><a class="nav-link" id="table-tab" data-toggle="tab" href="#table" role="tab" aria-controls="table" aria-selected="false">Table</a></li>
-              <li class="nav-item"><a class="nav-link" id="dining-tab" data-toggle="tab" href="#dining" role="tab" aria-controls="dining" aria-selected="false">Dining</a></li>
+            <ul class="nav" id="myTab">
+              <li class="nav-item"><a class="tablinks" id="bed-tab">Bed</a></li>
+              <li class="nav-item"><a class="tablinks" id="chair-tab">Chair</a></li>
+              <li class="nav-item"><a class="tablinks" id="sofa-tab">Sofa</a></li>
+              <li class="nav-item"><a class="tablinks" id="table-tab">Table</a></li>
+              <li class="nav-item"><a class="tablinks" id="dining-tab">Dining</a></li>
             </ul>
           </div>
-          <div class="col-auto dots">
+          <div class="col-auto dots products-slider-nav">
             <ul>
-              <li><a href="#" active></a></li>
-              <li><a href="#"></a></li>
-              <li><a href="#"></a></li>
             </ul>
           </div>
         </div>
       </div>
       <div class="tab-content" id="myTabContent">
-        <div class="row tab-pane fade show active" id="bed" role="tabpanel" aria-labelledby="bed-tab">
+        <div class="row tab-pane active bed-slider" id="bed">
           <div class="col-3">
             <div class="product-box">
               <div class="photo product-img-1">
@@ -444,7 +441,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div>  
           <div class="col-3">
             <div class="product-box">
               <div class="photo product-img-6">
@@ -507,7 +504,7 @@
                 </div>
               </div>
             </div>
-          </div>
+          </div>  
           <div class="col-3">
             <div class="product-box">
               <div class="photo product-img-8">
@@ -540,8 +537,71 @@
               </div>
             </div>
           </div>
+          <div class="col-3">
+            <div class="product-box">
+              <div class="photo product-img-2">
+                <div class="sale">sale</div>
+                <div class="buttons">
+                  <a href="#" class="btn-main-small">Quick View</a>
+                  <a href="#" class="btn-main-small"><i class="fa fa-shopping-basket"></i> ADD TO CART</a>
+                </div>
+              </div>
+              <div class="content">
+                <h5>Aenean Ru Bristique</h5>
+                <div class="stars">
+                  <a href="#" class="full"></a>
+                  <a href="#" class="full"></a>
+                  <a href="#"></a>
+                  <a href="#"></a>
+                  <a href="#"></a>
+                </div>
+              </div>
+              <div class="line"></div>
+              <div class="actions">
+                <div class="outlines">
+                  <a href="#" class="btn-outline" active><i class="far fa-heart"></i></a>
+                  <a href="#" class="btn-outline"><i class="fas fa-exchange-alt"></i></a>
+                </div>
+                <div class="price">
+                  <div class="btn-main-small no-hover">$ 30.00</div>
+                </div>
+              </div>
+            </div>
+          </div>  
+          <div class="col-3">
+            <div class="product-box">
+              <div class="photo product-img-3">
+                <div class="sale">sale</div>
+                <div class="buttons">
+                  <a href="#" class="btn-main-small">Quick View</a>
+                  <a href="#" class="btn-main-small"><i class="fa fa-shopping-basket"></i> ADD TO CART</a>
+                </div>
+              </div>
+              <div class="content">
+                <h5>Aenean Ru Bristique</h5>
+                <div class="stars">
+                  <a href="#" class="full"></a>
+                  <a href="#" class="full"></a>
+                  <a href="#"></a>
+                  <a href="#"></a>
+                  <a href="#"></a>
+                </div>
+              </div>
+              <div class="line"></div>
+              <div class="actions">
+                <div class="outlines">
+                  <a href="#" class="btn-outline"><i class="far fa-heart"></i></a>
+                  <a href="#" class="btn-outline" active><i class="fas fa-exchange-alt"></i></a>
+                </div>
+                <div class="price">
+                  <div class="old-price">$35.00</div>
+                  <div class="btn-main-small no-hover">$ 30.00</div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="row tab-pane fade" id="chair" role="tabpanel" aria-labelledby="chair-tab">
+        <div class="row tab-pane chair-slider" id="chair">
           <div class="col-3">
             <div class="product-box">
               <div class="photo product-img-3">
@@ -795,7 +855,7 @@
             </div>
           </div>
         </div>
-        <div class="row tab-pane fade" id="sofa" role="tabpanel" aria-labelledby="sofa-tab">
+        <div class="row tab-pane sofa-slider" id="sofa">
           <div class="col-3">
             <div class="product-box">
               <div class="photo product-img-5">
@@ -1049,7 +1109,7 @@
             </div>
           </div>
         </div>
-        <div class="row tab-pane fade" id="table" role="tabpanel" aria-labelledby="table-tab">
+        <div class="row tab-pane table-slider" id="table">
             <div class="col-3">
               <div class="product-box">
                 <div class="photo product-img-7">
@@ -1303,7 +1363,7 @@
               </div>
             </div>
         </div>
-        <div class="row tab-pane fade" id="dining" role="tabpanel" aria-labelledby="dining-tab">
+        <div class="row tab-pane dining-slider" id="dining">
               <div class="col-3">
                 <div class="product-box">
                   <div class="photo product-img-4">
@@ -1833,7 +1893,7 @@
           </div>
         </div>
       </div>
-      <div class="row blog-slider">
+      <div class="row blog-slider" id="blog-slider">
         <div class="col-12 col-s-12 col-md-6 col-lg-4">
           <div class="post-box">
             <a href="#" class="cover-link">
@@ -2026,6 +2086,7 @@
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
     crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.7/min/tiny-slider.js"></script>
   <script src="./scripts/bootstrap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/tiny-slider/2.8.7/min/tiny-slider.js"></script>
   <script src="./scripts/app.js"></script>

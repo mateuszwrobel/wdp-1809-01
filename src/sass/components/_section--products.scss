@@ -1,3 +1,25 @@
-.tab-content >.active {
+.tab-content>.active {
     display: flex;
+
+}
+
+.tab-pane {
+    animation: fadeEffect 1s;
+}
+
+@keyframes fadeEffect {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.panel-bar .dots.products-slider-nav ul li {
+    display: none !important;
+
+    &.visible {
+        display: inline-block !important;
+    }
 }
